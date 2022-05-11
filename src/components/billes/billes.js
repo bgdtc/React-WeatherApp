@@ -1,15 +1,11 @@
 import './css/billes.css'
 import test2 from '../../test2.svg'
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { store } from '../../store'
-import { getPrevisions } from '../../store/actions/PrevisionsActions'
-store.dispatch(getPrevisions())
+
 
 
 const Billes = () => {
-    const listPrevisions = useSelector(state => state.previsions.data)
-    console.log("RECUPERATIONS",listPrevisions.city.coord.lat)
+    
     const [billes, setBilles] = useState(0)
   
     useEffect(() => {
@@ -24,7 +20,7 @@ const Billes = () => {
                 </p>
                 <p>
                     don't Learn React
-                    récupéré avec le store ! : {listPrevisions.city.coord.lat}
+                  
                 </p>
                 <div>
                     <button className="App-btn" onClick={() => setBilles(billes + 1)}>
