@@ -1,0 +1,20 @@
+input {
+    font-size:xx-large;
+    font-weight: 900;
+    background-color: transparent;
+    border-color: aliceblue;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.icon {
+    color: rgb(31, 185, 0);
+    padding-left: 10px;
+}
+
+
+.t {
+    display: flex;
+    align-items: center;
+}
