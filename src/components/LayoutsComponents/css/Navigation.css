@@ -1,6 +1,7 @@
 .navigation {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: transparent;
     position: fixed;
     width: 100%;
@@ -33,3 +34,8 @@
     padding: 0 10px
   }
   
+  .inpoute {
+  display: none;
+  width: 200px;
+  height: 14px;
+  }

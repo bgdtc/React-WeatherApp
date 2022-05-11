@@ -1,20 +1,69 @@
 input {
-    font-size:xx-large;
     font-weight: 900;
     background-color: transparent;
-    border-color: aliceblue;
+    border-color: #a0aedfc2;
+    box-shadow: none;
     color: aliceblue;
-    border-radius: 10px;
+    border-radius: 15px;
+    border-width: 2px;
     padding: 10px;
 }
 
+@media only screen and (min-width: 600px) {
+    input {
+        font-size:xx-large;
+        font-weight: 900;
+        background-color: transparent;
+        border-color: #a0aedfc2;
+        box-shadow: none;
+        color: aliceblue;
+        border-radius: 15px;
+        border-width: 2px;
+        padding: 10px;
+    }
+}
+
+
 .icon {
-    color: rgb(31, 185, 0);
     padding-left: 10px;
 }
 
 
 .t {
     display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
+}
+
+.ic {
+    padding-left: 10px;
+}
+
+
+h4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ 
+    padding: 10px;
+}
+
+.ResIcon {
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.iconDiv {
+    display: flex;
+    align-items: center;
+} 
+
+.result {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
