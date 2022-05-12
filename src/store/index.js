@@ -5,12 +5,14 @@ import thunk from 'redux-thunk'
 
 // IMPORTS REDUCERS
 import { PrevisionsReducer } from './reducers/PrevisionsReducer'
+import { NasaReducer } from './reducers/NasaReducer'
 
 
 // REDUCERS
 
 const rootReducer = combineReducers({
-    previsions: PrevisionsReducer
+    previsions: PrevisionsReducer,
+    iotd: NasaReducer,
 });
 
 

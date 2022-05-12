@@ -1,12 +1,18 @@
+// IMPORT MODULES
 import "./css/Navigation.css"
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { NavLink } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 import * as React from 'react'
 
+
+// MAIN FUNC
 const Navigation = (props) => {
+  // VAR POUR RÉCUPERER LE PATH
   const location = useLocation()
+  // PROPS POUR LE TITRE ET LE LIEN DE NAV
   const { title, link } = props
+  // TRUC POUR LE CONTROLE K
   // const handleKeyPress = React.useCallback((event) => {
   //   if (event.ctrlKey === true && event.key === ("k" || "K")) {
   //     event.preventDefault();
@@ -16,6 +22,8 @@ const Navigation = (props) => {
   // React.useEffect(() => {
   //   document.addEventListener("keydown", handleKeyPress)
   // },[])
+
+  // PAGE HTML
   return (
     <div className="navigation">
       <NavLink to={"/"}>{location.pathname !== "/" ? "Weather" : title} </NavLink>
@@ -37,4 +45,5 @@ const Navigation = (props) => {
   );
 };
 
+// EXPORT MODULE
 export default Navigation;

@@ -1,40 +1,59 @@
+// IMPORTS 
 import './css/billes.css'
-import test2 from '../../test2.svg'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { store } from '../../store'
+import { getIotd, getImgSel } from '../../store/actions/NasaActions'
+
+// STORE DISPATCH
+store.dispatch(getIotd())
+store.dispatch(getImgSel())
 
 
-
+// MAIN FUNC
 const Billes = () => {
-    
-    const [billes, setBilles] = useState(0)
-  
-    useEffect(() => {
-      document.getElementById('billes').innerHTML = `vous avez ${billes} billes`
-    })
-    return(
-        <div className = "App" >
+     
+    // VARIABLE DU STATE
+    const iotd = useSelector(state => state.iotd.data)
+    // LOG DES DATAS
+    console.log("IOTD", iotd)
+
+    // CONFIG USE DISPATCH POUR L'UTILISER APRÈS
+    const dispatch = useDispatch()
+ 
+    // FONCTION RECHERCHE DATE API
+    const search = (query) => {
+        // EXECUTE LA FONCTION DU STORE EN LUI PASSANT UNE QUERY
+        dispatch(getImgSel(query))
+    }
+    // PAGE HTML
+    return (
+        <div className="App" >
             <header className="App-header">
-                <img src={test2} className="App-logo" alt="logo" />
-                <p id='billes'>
-                    bonjour
-                </p>
-                <p>
-                    don't Learn React
-                  
-                </p>
+                image du jour : {iotd.date}
+                <br />
+                {iotd.title}
+                <img src={iotd.hdurl} className="" alt="logo" />
+                <input id='date' type="date" />
+                <p className='text'>{iotd.explanation}</p>
                 <div>
-                    <button className="App-btn" onClick={() => setBilles(billes + 1)}>
-                        Ajout de billes
+                  
+
+                    <button className="App-btn" onClick={() => search(document.getElementById('date').value)}>
+                        Get IOTD
+
                     </button>
-                    <button className="App-btn2" onClick={() => setBilles(0)}>
-                        Reset Billes
+                    <button className="App-btn2" onClick={() => dispatch(getIotd())}>
+                        Reset
                     </button>
+                   
                 </div>
 
+
             </header>
-</div >
+        </div >
 
     )
 }
-
+// EXPORT DU COMPONENT
 export default Billes;
