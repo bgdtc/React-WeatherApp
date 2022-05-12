@@ -3,21 +3,22 @@
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    position: fixed;
-    width: 100%;
     top: 0;
-    padding: 0 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     color: white;
     
   }
   
   .navigation a {
-    margin: 10px;
-    padding: 10px;
-    position: relative;
+    margin: 0px;
+    display: flex;
+    padding: 0px;
     color: white;
+    align-items: center;
     text-decoration: none;
   }
+
   
   .navigation .nav-active::after {
     content: "";
@@ -31,11 +32,11 @@
   }
   
   .item-nav {
-    padding: 0 10px
+    padding: 0 10px;
   }
-  
+/*   
   .inpoute {
   display: none;
   width: 200px;
   height: 14px;
-  }
+  } */

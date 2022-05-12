@@ -1,5 +1,5 @@
 // IMPORTS 
-import './css/billes.css'
+import './billes.css'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { store } from '../../store'
@@ -29,12 +29,11 @@ const Billes = () => {
     // PAGE HTML
     return (
         <div className="App" >
-            <header className="App-header">
-                image du jour : {iotd.date}
-                <br />
+            <header className="App-header2">
+                <p className=''>image du jour : {iotd.date}</p>
                 {iotd.title}
-                <img src={iotd.hdurl} className="" alt="logo" />
-                <input id='date' type="date" />
+                <img src={iotd.url} className="test" alt="logo" />
+                <input id='date' className='test' type="date" />
                 <p className='text'>{iotd.explanation}</p>
                 <div>
                   

@@ -11,7 +11,7 @@ const Navigation = (props) => {
   // VAR POUR RÉCUPERER LE PATH
   const location = useLocation()
   // PROPS POUR LE TITRE ET LE LIEN DE NAV
-  const { title, link } = props
+  const { title, link, icon, nasa } = props
   // TRUC POUR LE CONTROLE K
   // const handleKeyPress = React.useCallback((event) => {
   //   if (event.ctrlKey === true && event.key === ("k" || "K")) {
@@ -26,18 +26,20 @@ const Navigation = (props) => {
   // PAGE HTML
   return (
     <div className="navigation">
-      <NavLink to={"/"}>{location.pathname !== "/" ? "Weather" : title} </NavLink>
+      <NavLink className='b' to={"/"}>{location.pathname !== "/" ? "Weather" : title}  {location.pathname !== "/" ? icon : nasa} </NavLink>
       <ul className="row">
-      <input className="inpoute" type="text" placeholder="ctrl + k"/>
+        {/* <input className="inpoute" type="text" placeholder="ctrl + k" /> */}
         {
           link.map(link => {
             return <NavLink key={link} exact="true" to={location.pathname !== "/" ? "/" : "Weather"} activeclassname="active">
               {location.pathname !== "/"
                 ? <BsArrowLeft size="40" />
-                : <BsArrowRight size="40" />}
-                
+                : <BsArrowRight size="40" />
+              }
+
+
             </NavLink>
-            
+
           })
         }
       </ul>

@@ -138,8 +138,8 @@ const SearchBar = () => {
     return (
         <div className='t'>
             <div className='iconDiv'>
-                <input id='searchBar' onKeyUp={() => search(document.getElementById('searchBar').value)} onKeyDown={() => resetData()} type="text" placeholder='Ville...' />
-                <MdGpsFixed onClick={() => GetUserLocationWeather()} className='icon' color='#b8c55d' size={40} />
+                <input id='searchBar' onKeyUp={() => search(document.getElementById('searchBar').value)} onKeyDown={() => resetData()} type="text" placeholder='Ville...'/>
+                <MdGpsFixed onClick={() => GetUserLocationWeather()} className='icon' color='white' size={40} />
             </div>
             <div className='result'>
                 <h3>{cityIcon}{result}{icon}</h3>
