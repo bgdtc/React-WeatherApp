@@ -1,8 +1,8 @@
-import Home from "../components/home/home";
+import Nasa from '../components/nasa/nasa';
 
 function HomePage() {
     return (
-        <Home />
+        <Nasa />
     );
 }
 

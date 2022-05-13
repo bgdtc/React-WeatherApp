@@ -1,11 +1,15 @@
 // IMPORTS MODULES
+
+// CSS
 import '../weather/SearchBar.css'
+// ICONS
 import { MdGpsFixed, MdLocationCity } from 'react-icons/md'
 import { TiWeatherSunny, TiWeatherCloudy, TiWeatherPartlySunny, TiWeatherShower } from 'react-icons/ti'
 import { FaTemperatureLow } from 'react-icons/fa'
 import { BsCloudFog } from 'react-icons/bs'
 import { SiWindicss } from 'react-icons/si'
 import { RiCloudOffLine } from 'react-icons/ri'
+// USE STATE & REACT
 import React, { useState } from 'react'
 // IMPORTS STORE
 import { useSelector, useDispatch } from 'react-redux'
@@ -37,7 +41,7 @@ const SearchBar = () => {
         if (query.length < 3) {
             console.log("esquive api")
         } else {
-        // SINON
+            // SINON
             console.log("fonction test lancée")
             // UTILISATION DE GETPREVISIONS AVEC UNE QUERY
             dispatch(getPrevisions(query))
@@ -111,17 +115,17 @@ const SearchBar = () => {
         navigator.geolocation.getCurrentPosition(function (position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-                    // let res = response.data.weather[0].description
-                    // let degres = response.data.main.temp
-                    // let vent = response.data.wind.speed
-                    // setResult("Pays: " + response.data.sys.country + " latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude + res)
-                    // setTemp(degres)
-                    // setTempIcon(<FaTemperatureLow className='ic' size={20} color='#58c78f' />)
-                    // setWind(vent)
-                    // setWindIcon(<SiWindicss className='ic' size={20} color='#66b1ed' />)
+            // let res = response.data.weather[0].description
+            // let degres = response.data.main.temp
+            // let vent = response.data.wind.speed
+            // setResult("Pays: " + response.data.sys.country + " latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude + res)
+            // setTemp(degres)
+            // setTempIcon(<FaTemperatureLow className='ic' size={20} color='#58c78f' />)
+            // setWind(vent)
+            // setWindIcon(<SiWindicss className='ic' size={20} color='#66b1ed' />)
 
         })
-    
+
     }
 
     // ON KEY DOWN RESET DATA
@@ -138,7 +142,7 @@ const SearchBar = () => {
     return (
         <div className='t'>
             <div className='iconDiv'>
-                <input id='searchBar' onKeyUp={() => search(document.getElementById('searchBar').value)} onKeyDown={() => resetData()} type="text" placeholder='Ville...'/>
+                <input id='searchBar' onKeyUp={() => search(document.getElementById('searchBar').value)} onKeyDown={() => resetData()} type="text" placeholder='Ville...' />
                 <MdGpsFixed onClick={() => GetUserLocationWeather()} className='icon' color='white' size={40} />
             </div>
             <div className='result'>
