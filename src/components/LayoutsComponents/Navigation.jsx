@@ -1,8 +1,8 @@
 // IMPORT MODULES
 import "./css/Navigation.css"
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
-import { Navigate, NavLink, Router } from "react-router-dom";
-import { useLocation, useHref } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 import * as React from 'react'
 
 
@@ -14,7 +14,7 @@ const Navigation = (props) => {
   // VAR POUR RÉCUPERER LE PATH
   const location = useLocation()
   // PROPS POUR LE TITRE ET LE LIEN DE NAV
-  const { homeTitle, nasaTitle, weatherTitle, homeLink, nasaLink, weatherLink, homeIcon, nasaIcon, weatherIcon, link } = props
+  const { homeTitle, nasaTitle, weatherTitle, homeIcon, nasaIcon, weatherIcon, link } = props
   console.log(location.pathname)
   // TRUC POUR LE CONTROLE K
   // const handleKeyPress = React.useCallback((event) => {
@@ -36,7 +36,7 @@ const Navigation = (props) => {
           : location.pathname === "/Nasa" ? nasaTitle
             : location.pathname === "/Weather" ? weatherTitle
               : "no title"}
-        
+
         {/* GESTION ICONES */}
         {location.pathname === "/" ? homeIcon
           : location.pathname === "/Weather" ? weatherIcon

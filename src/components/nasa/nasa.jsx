@@ -1,10 +1,16 @@
 // IMPORTS 
+
+// CSS
 import './nasa.css'
+
+// STORE
 import { useSelector, useDispatch } from 'react-redux'
-import { CgShapeHexagon } from 'react-icons/cg'
-import { MdPolymer } from 'react-icons/md'
 import { store } from '../../store'
 import { getIotd, getImgSel } from '../../store/actions/NasaActions'
+
+// ICONS
+import { CgShapeHexagon } from 'react-icons/cg'
+import { MdPolymer } from 'react-icons/md'
 
 // STORE DISPATCH
 store.dispatch(getIotd())
@@ -27,6 +33,17 @@ const Nasa = () => {
         // EXECUTE LA FONCTION DU STORE EN LUI PASSANT UNE QUERY
         dispatch(getImgSel(query))
     }
+    // TRUC POUR LE CONTROLE K
+    // const handleKeyPress = React.useCallback((event) => {
+    //     if (event.key) {
+    //         event.preventDefault();
+    //         search(document.getElementById('date').value)
+    //         console.log("bite");
+    //     }
+    // })
+    // React.useEffect(() => {
+    //     document.addEventListener("keydown", handleKeyPress)
+    // }, [])
     // PAGE HTML
     return (
         <div className="App" >
@@ -37,12 +54,9 @@ const Nasa = () => {
                     <img src={iotd.url} className="test" alt="logo" />
                 </div>
 
-                <input id='date' className='test' type="date" />
+                <input id='date' className='test' type="date" onChange={() => search(document.getElementById('date').value)} />
                 <p className='text'>{iotd.explanation}</p>
                 <div className='tt'>
-                    <button className="App-btn" onClick={() => search(document.getElementById('date').value)}>
-                        Get IOTD
-                    </button>
                     <button className="App-btn2" onClick={() => dispatch(getIotd())}>
                         Reset
                     </button>

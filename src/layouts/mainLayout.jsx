@@ -10,10 +10,8 @@ const MainLayout = ({ children }) => {
   const [weatherTitle] = useState(["Weather"])
 
   // NAV LINKS
-  const [nasaLink] = useState(["Nasa"])
   const [link] = useState(["/"])
-  const [homeLink] = useState(["/"])
-  const [weatherlink] = useState(["Weather"])
+
 
   // NAV ICONS
   const [weatherIcon] = useState(<BsFillCloudRainFill className="title" size={25} />)
@@ -28,9 +26,6 @@ const MainLayout = ({ children }) => {
         weatherTitle={weatherTitle}
         // NAV LINKS PROPS
         link={link}
-        homeLink={homeLink}
-        nasaLink={nasaLink}
-        weatherlink={weatherlink}
         // NAV ICONS PROPS
         homeIcon={homeIcon}
         nasaIcon={nasaIcon}

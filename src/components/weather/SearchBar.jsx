@@ -115,15 +115,6 @@ const SearchBar = () => {
         navigator.geolocation.getCurrentPosition(function (position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-            // let res = response.data.weather[0].description
-            // let degres = response.data.main.temp
-            // let vent = response.data.wind.speed
-            // setResult("Pays: " + response.data.sys.country + " latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude + res)
-            // setTemp(degres)
-            // setTempIcon(<FaTemperatureLow className='ic' size={20} color='#58c78f' />)
-            // setWind(vent)
-            // setWindIcon(<SiWindicss className='ic' size={20} color='#66b1ed' />)
-
         })
 
     }
